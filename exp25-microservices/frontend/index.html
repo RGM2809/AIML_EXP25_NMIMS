@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservices Control Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">M</div>
+                <div>
+                    <h1>MicroFlow</h1>
+                    <p>MICROSERVICES CONTROL CENTER</p>
+                </div>
+            </div>
+
+            <div class="cluster-status">
+                <span class="status-dot"></span>
+                <span>Kubernetes Cluster</span>
+                <span class="status-label">MONITORING</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+
+            <section class="welcome">
+                <p class="eyebrow">INFRASTRUCTURE OVERVIEW</p>
+                <h2>Your services, <span>connected.</span></h2>
+                <p>
+                    Monitor your microservices architecture and test
+                    communication between services.
+                </p>
+            </section>
+
+            <section class="summary-grid">
+
+                <article class="summary-card">
+                    <p>Total Services</p>
+                    <h3>03</h3>
+                    <span>Frontend + 2 services</span>
+                </article>
+
+                <article class="summary-card">
+                    <p>Architecture</p>
+                    <h3>3-Tier</h3>
+                    <span>Distributed application</span>
+                </article>
+
+                <article class="summary-card">
+                    <p>Communication</p>
+                    <h3 id="connection-status">Untested</h3>
+                    <span>Internal Kubernetes DNS</span>
+                </article>
+
+            </section>
+
+            <section class="section-heading">
+                <div>
+                    <p class="eyebrow">SYSTEM COMPONENTS</p>
+                    <h2>Service architecture</h2>
+                </div>
+                <span class="environment-tag">ENVIRONMENT: K8S</span>
+            </section>
+
+            <section class="service-grid">
+
+                <article class="service-card">
+                    <div class="service-icon frontend-icon">WEB</div>
+                    <div class="service-info">
+                        <span class="service-type">PRESENTATION LAYER</span>
+                        <h3>Frontend Webserver</h3>
+                        <p>Nginx · User interface</p>
+                    </div>
+                    <span class="service-indicator">●</span>
+                    <div class="service-footer">
+                        <span>Port</span>
+                        <strong>80</strong>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon aggregator-icon">API</div>
+                    <div class="service-info">
+                        <span class="service-type">APPLICATION LAYER</span>
+                        <h3>Microservice One</h3>
+                        <p>Flask · Aggregator</p>
+                    </div>
+                    <span class="service-indicator">●</span>
+                    <div class="service-footer">
+                        <span>Endpoint</span>
+                        <strong>/process</strong>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon data-icon">DB</div>
+                    <div class="service-info">
+                        <span class="service-type">DATA LAYER</span>
+                        <h3>Microservice Two</h3>
+                        <p>Flask · Data provider</p>
+                    </div>
+                    <span class="service-indicator">●</span>
+                    <div class="service-footer">
+                        <span>Endpoint</span>
+                        <strong>/data</strong>
+                    </div>
+                </article>
+
+            </section>
+
+            <section class="test-panel">
+                <div class="test-heading">
+                    <div>
+                        <p class="eyebrow">CONNECTIVITY CHECK</p>
+                        <h2>Test service communication</h2>
+                        <p>
+                            Send a request through Microservice One
+                            to Microservice Two.
+                        </p>
+                    </div>
+                    <div class="connection-symbol">↗</div>
+                </div>
+
+                <button id="test-button" type="button">
+                    Test Connection <span>→</span>
+                </button>
+
+                <div id="result-panel" class="result-panel" aria-live="polite">
+                    <p>Awaiting connection test...</p>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <span>MicroFlow Control Center</span>
+                <span>Experiment 25 · Kubernetes Microservices</span>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
